@@ -1,11 +1,13 @@
-﻿<script runat="server">
-
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        output.Text = "Hello world";
-    }
-
+﻿<script type="text/javascript">
+    setTimeout(function () {
+        var item = $display.getItem();
+        var metaData = item.getMetadata();
+        var metaSrcDiv = $(".metaSrc");
+        metaSrcDiv.textContent = metaData;
+    }, 2000);
 </script>
 
 <%@ Control Language="C#" AutoEventWireup="true" %>
-<asp:Literal ID="output" runat="server"></asp:Literal>
+<div class="metaSrc">
+    metaSrc
+</div>

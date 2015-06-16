@@ -6,7 +6,7 @@ namespace ComponentTabs.Config
     {
         public MetaDataSourceTabResourceGroup()
         {
-
+            Dependencies.AddAlchemyCore();
             // When adding files you only need to specify the filename and not full path
             //AddFile("MetaDataSourceTab.js");
             //AddFile("GetApiVersionCommand.js");
