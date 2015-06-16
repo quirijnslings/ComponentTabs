@@ -8,6 +8,8 @@
 </script>
 
 <%@ Control Language="C#" AutoEventWireup="true" %>
-<div class="metaSrc">
-    metaSrc
-</div>
+<pre>
+    <code class="metaSrc">
+        metaSrc
+    </code>
+</pre>
