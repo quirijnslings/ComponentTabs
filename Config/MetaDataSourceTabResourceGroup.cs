@@ -8,7 +8,7 @@ namespace ComponentTabs.Config
         {
 
             // When adding files you only need to specify the filename and not full path
-            AddFile("MetaDataSourceTab.js");
+            //AddFile("MetaDataSourceTab.js");
             //AddFile("GetApiVersionCommand.js");
             //AddFile("HelloWorldCommand.js");
 
