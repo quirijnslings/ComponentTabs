@@ -18,7 +18,7 @@ Alchemy.command("${PluginName}", "MetaDataSourceTab", {
      * @returns {boolean}
      */
     isAvailable: function () {
-        return true;
+        return false;
     },
 
     /**
