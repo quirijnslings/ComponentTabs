@@ -4,6 +4,11 @@
  *
  * Note the ${PluginName} will get replaced by the actual plugin name.
  */
+
+if (Tridion.UI.UserSettings.getJsonUserSettings(true).User.Data.Privileges != "1") {
+    $display.getView().properties.controls.TabControl.disableItem('SourceTab');
+    $display.getView().properties.controls.TabControl.disableItem('MetaDataSourceTab');
+}
 Alchemy.command("${PluginName}", "MetaDataSourceTab", {
     /**
      * Whether or not the command is enabled for the user (will usually have extensions displayed but disabled).
@@ -18,7 +23,7 @@ Alchemy.command("${PluginName}", "MetaDataSourceTab", {
      * @returns {boolean}
      */
     isAvailable: function () {
-        return false;
+        return Tridion.UI.UserSettings.getJsonUserSettings(true).User.Data.Privileges == "1";
     },
 
     /**
@@ -26,20 +31,5 @@ Alchemy.command("${PluginName}", "MetaDataSourceTab", {
      */
     execute: function () {
 
-        var progress = $messages.registerProgress("Getting Component Metadata", null),
-            userName = "AlchemyTester";
-
-        // This is the error first callback pattern that the webapi proxy js exposes. Look at another example to
-        // see how the promise pattern can also be used.
-
-        // The call back must go as last parameter of action method.
-        Alchemy.Plugins.MetaDataSourceTab.Api.Service.metaDataSourceTab(userName, function (error, message) {
-            progress.finish({ success: true });
-            if (error) {
-                // error will only exist if there was an error, otherwise it'll be null.
-                $messages.registerError("There was an error", error.message);
-            }
-            $messages.registerGoal(message, null);
-        });
     }
 });
