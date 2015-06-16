@@ -76,6 +76,7 @@
     </Content>
     <Content Include="Static\Scripts\MetaDataSourceTab.js" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Alchemy4Tridion.Plugin.1.0.0-alpha4\build\net40\Alchemy4Tridion.Plugin.targets" Condition="Exists('packages\Alchemy4Tridion.Plugin.1.0.0-alpha4\build\net40\Alchemy4Tridion.Plugin.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

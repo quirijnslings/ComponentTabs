@@ -8,7 +8,7 @@ namespace ComponentTabs.Config
         {
             AssignId = "MetaDataSourceTab";
             Control = "MetaDataSourceTab.ascx";
-            Name = "Component Metadata Tab";
+            Name = "Metadata Source";
             PageType = "MetaDataSourceTab";
             Dependencies.Add<MetaDataSourceTabResourceGroup>();
 
